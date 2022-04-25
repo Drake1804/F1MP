@@ -30,6 +30,16 @@ data class News(
 
     @field:Element(name = "pubDate", required = false)
     @Path("rss/channel")
-    var pubDate: String = ""
+    var pubDate: String = "",
+
+    @field:Element(name = "enclosure", required = false)
+    @Path("rss/channel")
+    var image: Image = Image()
+)
+
+@Root(strict = false, name = "enclosure")
+data class Image(
+    @field:Attribute(name = "url", required = false)
+    var imageUrl: String = ""
 )
 
