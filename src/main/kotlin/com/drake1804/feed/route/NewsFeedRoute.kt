@@ -4,14 +4,16 @@ import com.drake1804.feed.controller.FetchNewsFeedController
 import io.ktor.application.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import org.koin.ktor.ext.inject
 
-fun Application.registerNewsFeedRoute(controller: FetchNewsFeedController) {
+fun Application.registerNewsFeedRoute() {
     routing {
-        newsFeedRoute(controller)
+        newsFeedRoute()
     }
 }
 
-fun Route.newsFeedRoute(controller: FetchNewsFeedController) {
+fun Route.newsFeedRoute() {
+    val controller by inject<FetchNewsFeedController>()
     route("/newsFeed") {
         get {
             call.respond(controller.execute())

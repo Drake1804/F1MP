@@ -7,7 +7,6 @@ import org.simpleframework.xml.core.Persister
 
 
 class F1NewsNetworkRequests(private val httpClient: HttpClient) {
-
     suspend fun getRssFeed(): Rss {
         val requestUrl = "https://www.f1news.ru/export/news.xml"
         val string: String = httpClient.get(requestUrl)

@@ -22,7 +22,6 @@ fun Application.sideMain() {
     install(Koin) {
         modules(f1FeedModule)
     }
-    val controller by inject<FetchNewsFeedController>()
-    registerNewsFeedRoute(controller)
+    registerNewsFeedRoute()
     configureSerialization()
 }
