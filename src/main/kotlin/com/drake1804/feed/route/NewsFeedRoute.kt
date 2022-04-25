@@ -14,9 +14,7 @@ fun Application.registerNewsFeedRoute(controller: FetchNewsFeedController) {
 fun Route.newsFeedRoute(controller: FetchNewsFeedController) {
     route("/newsFeed") {
         get {
-            val res = controller.execute().toString()
-            println(res)
-            call.respondText(res)
+            call.respond(controller.execute())
         }
     }
 }
