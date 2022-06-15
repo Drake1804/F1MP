@@ -19,6 +19,10 @@ fun Application.sideMain() {
     install(Koin) {
         modules(f1FeedModule)
     }
+    install(ShutDownUrl.ApplicationCallFeature) {
+        shutDownUrl = "/shutdown"
+        exitCodeSupplier = { 0 }
+    }
     registerNewsFeedRoute()
     configureSerialization()
 }
