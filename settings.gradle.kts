@@ -1,1 +1,1 @@
-rootProject.name = "com.drake1804.f1mp"
+rootProject.name = "f1mp-app"
